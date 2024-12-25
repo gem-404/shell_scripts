@@ -4,7 +4,7 @@ LOG_FILE="/home/gem-404/shell_scripts/internet_connection_checker.log"
 DISPLAY=:0.0
 DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
 
-no_connection_icon="/home/gem-404/notify-send-icons/no-wireless-connection.png"
+no_connection_icon="network-offline"
 connection_icon="network-wireless"
 
 # Function to check if a command exists

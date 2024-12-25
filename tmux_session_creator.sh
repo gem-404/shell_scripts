@@ -25,6 +25,8 @@ fi
 
 tmux new-session -d -s $SESSION -n $WINDOW1
 
+tmux_window_creator() {
+
     local session_name=$1
     local window_name=$2
 
@@ -36,7 +38,8 @@ tmux new-session -d -s $SESSION -n $WINDOW1
     tmux split-window -h -p 50 -t $session_name:$window_name
 
     tmux send-keys -t $session_name:$window_name.2 "cava" C-m  # Pane 2 -> bottom-left
-    tmux send-keys -t $session_name:$window_name.3 "tty-clock -scnD" C-m  # Pane 3 -> bottom-right
+    tmux send-keys -t $session_name:$window_name.3 "tty-clock -cnD" C-m  # Pane 3 -> bottom-right
+
 }
 
 tmux_window_creator $SESSION $WINDOW1

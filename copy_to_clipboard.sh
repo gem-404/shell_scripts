@@ -2,8 +2,10 @@
 
 # Paths to your text files
 XCLIP="/usr/bin/xclip"
+
 FILE_WELCOME="$HOME/welcome.txt"
 FILE_FOLLOWUP="$HOME/welcome-follow-up.txt"
+GOOD_BYE_REVIEW="$HOME/goodbye-review-msg.txt"
 
 # Check if xclip is installed
 if ! command -v xclip &>/dev/null; then
@@ -33,11 +35,17 @@ case "$1" in
     copy_to_clipboard "$FILE_FOLLOWUP"
     ;;
 
+  f3)
+    copy_to_clipboard "$GOOD_BYE_REVIEW"
+    ;;
+
   *)
     echo "Usage: $0 {f1|f2}"
     echo "  f1: Copy welcome.txt to clipboard"
     echo "  f2: Copy welcome-follow-up.txt to clipboard"
+    echo "  f3: Copy good-bye-review.txt to clipboard"
     exit 1
     ;;
 
 esac
+
